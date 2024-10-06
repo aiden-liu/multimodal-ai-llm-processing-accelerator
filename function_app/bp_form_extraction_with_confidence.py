@@ -306,6 +306,7 @@ def form_extraction_with_confidence(
             output_model.di_extracted_text = [
                 doc.to_dict() for doc in di_result_docs if doc.content
             ]
+            logging.info([str(doc) for doc in di_result_docs])
             output_model.di_raw_response = di_result["raw_azure_response"]
             output_model.di_time_taken_secs = di_timer.time_taken
         except Exception as _e:
